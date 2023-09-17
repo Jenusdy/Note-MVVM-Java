@@ -74,6 +74,7 @@ dependencies {
     // optional - Test helpers for Lifecycle runtime
     testImplementation("androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version")
 
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
