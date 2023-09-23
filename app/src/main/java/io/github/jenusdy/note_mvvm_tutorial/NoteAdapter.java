@@ -38,6 +38,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
         return notes.size();
     }
 
+    public Note getNote(int position){
+        return notes.get(position);
+    }
+
     public void setNotes(List<Note> notes){
         this.notes = notes;
         // TODO : Will replace later
