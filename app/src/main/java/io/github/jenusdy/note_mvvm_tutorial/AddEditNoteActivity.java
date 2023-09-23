@@ -16,7 +16,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import io.github.jenusdy.livedata_tutorial.R;
 import io.github.jenusdy.note_mvvm_tutorial.entity.Note;
 
-public class AddNoteActivity extends AppCompatActivity {
+public class AddEditNoteActivity extends AppCompatActivity {
+    public static final String EXTRA_ID = "extra-id";
     public static final String EXTRA_TITLE = "extra-title";
     public static final String EXTRA_DESCRIPTION = "extra-description";
     public static final String EXTRA_PRIORITY = "extra-priority";
@@ -38,6 +39,15 @@ public class AddNoteActivity extends AppCompatActivity {
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.close_white);
 
+        Intent intent = getIntent();
+        if (intent.hasExtra(AddEditNoteActivity.EXTRA_ID)) {
+            setTitle("Edit Note");
+            titleNote.setText(intent.getStringExtra(AddEditNoteActivity.EXTRA_TITLE));
+            descriptionNote.setText(intent.getStringExtra(AddEditNoteActivity.EXTRA_DESCRIPTION));
+            priorityNote.setValue(intent.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITY, -1));
+        } else {
+            setTitle("Add Note");
+        }
     }
 
     @Override
@@ -61,7 +71,7 @@ public class AddNoteActivity extends AppCompatActivity {
         Integer priority = priorityNote.getValue();
         Note note = new Note(title, description, priority);
 
-        if (title.trim().isEmpty() || description.trim().isEmpty()){
+        if (title.trim().isEmpty() || description.trim().isEmpty()) {
             Toast.makeText(this, "Mohon isi title dan deskripsi terlebih dahulu", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -70,6 +80,12 @@ public class AddNoteActivity extends AppCompatActivity {
         data.putExtra(EXTRA_TITLE, title);
         data.putExtra(EXTRA_DESCRIPTION, description);
         data.putExtra(EXTRA_PRIORITY, priority);
+
+        int id = getIntent().getIntExtra(EXTRA_ID, -1);
+
+        if (id != -1) {
+            data.putExtra(EXTRA_ID, id);
+        }
 
         setResult(RESULT_OK, data);
         finish();
