@@ -16,6 +16,7 @@ Aplikasi ini memungkinkan pengguna untuk membuat, membaca, mengedit, dan menghap
 
 Aplikasi ini menggunakan arsitektur MVVM (Model-View-ViewModel). Arsitektur ini memisahkan logika bisnis dari tampilan.
 
+
 * **Model:** Model bertanggung jawab untuk menyimpan data dan melakukan operasi data.
 * **View:** View bertanggung jawab untuk menampilkan data ke pengguna.
 * **ViewModel:** ViewModel bertanggung jawab untuk menghubungkan Model dan View.
@@ -42,6 +43,13 @@ Java adalah bahasa pemrograman berorientasi objek yang dikembangkan oleh Sun Mic
 
 * MVVM Architecture: https://en.wikipedia.org/wiki/Model-View-ViewModel
 * Java: https://www.java.com/en/
+
+**Screenshot**
+
+
+https://github.com/Jenusdy/note-mvvm-tutorial/assets/23545319/8bace439-beb3-408c-a5d2-6775c0c77e99
+
+
 
 **Kontak**
 
