@@ -45,6 +45,4 @@ Java adalah bahasa pemrograman berorientasi objek yang dikembangkan oleh Sun Mic
 
 **Kontak**
 
-Jika Anda memiliki pertanyaan atau masalah, silakan hubungi saya di [email-protected]
-
-[email-protected] = jenusdy@gmail.com
+Jika Anda memiliki pertanyaan atau masalah, silakan hubungi saya di [email](jenusdy@gmail.com)
